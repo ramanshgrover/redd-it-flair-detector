@@ -29,6 +29,8 @@ pip3 install -r requirements.txt
 
 Now, execute the following command: `python main.py`. It will direct to the /localhost/ with the /port/. Copy the IP Address to a web browser and use the flask app.
 
+![](Demo.gif)
+
 ## Summary
 To conclude, I sampled r/India flair wise, (to the extent PRAW permitted) and found out that SVM with C=10, gamma=1, and the rbf kernel was able to achieve ~80.51% testing accuracy with a surprisingly large overfit.
 
