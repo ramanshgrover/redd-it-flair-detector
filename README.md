@@ -32,23 +32,9 @@ pip3 install -r requirements.txt
 Now, execute the following command: `python main.py`. It will direct to the _localhost_ with the _port_. Copy the IP Address to a web browser and use the flask app.
 
 ## Summary
-To conclude, I sampled r/India flair wise, (to the extent PRAW permitted) and found out that SVM with C=10, gamma=1, and the rbf kernel was able to achieve ~80.51% testing accuracy with a surprisingly large overfit.
+To conclude, I sampled r/India flair wise, (to the extent PRAW permitted) and found out that SVM with C=10, gamma=1, and the rbf kernel was able to achieve ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my Jupyter Notebooks.
 
-|   Vectorizer  |     Model     |    Accuracy   |
-| ------------- | ------------- | ------------- |
-| Bag-of-Words  | Multinomial Naive Bayes 1  | 48.84  |
-| Bag-of-Words  | Multinomial Naive Bayes 2  | 48.46 |
-| Bag-of-Words  | Logistic Regression 1  |  70.64 |
-| Bag-of-Words  | Logistic Regression 2  | 72.82 |
-| Bag-of-Words  | Random Forest 1  | 77.94  |
-| Bag-of-Words  | Random Forest 2  | 78.84 |
-| Bag-of-Words  | Support Vector Machine 1  | 77.69 |
-| Bag-of-Words  | Support Vector Machine 2 | 77.30 |
-| TF IDF  | Multinomial Naive Bayes 1  | 56.28  |
-| TF IDF  | Multinomial Naive Bayes 2  | 57.17 |
-| TF IDF  | Logistic Regression 1  | 61.41  |
-| TF IDF  | Logistic Regression 2  | 61.66 |
-| TF IDF  | Random Forest 1  |   79.74 |
-| TF IDF  | Random Forest 2  |  78.71 |
-| TF IDF  | Support Vector Machine 1  |  66.92  |
-| TF IDF  | Support Vector Machine 2 | **80.51** |
+|   Vectorizer  |    Multinomial Naive Bayes     |    Logistic Regression   | Random Forest | **Support Vector Machine** |
+| ------------- | ------------------------------ | ------------------------ | ------------- | -------------------------- |
+| Bag-of-Words  |               48.84            |            72.82         |     78.84     |            77.69           |
+|  **TF IDF**   |               57.17            |            61.66         |     79.74     |          **80.51**         |
