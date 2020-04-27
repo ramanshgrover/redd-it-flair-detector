@@ -35,12 +35,12 @@ bot.read_only = True  # A submission read-only bot
 subreddit = bot.subreddit('india')
 
 # Flairs
-flairs = ['Politics', 'Photography', 'Policy/Economy', 'AskIndia', 'Sports', 'Non-Political', 'Scheduled',
-          'Science/Technology', 'Food', 'Business/Finance', 'Coronavirus', 'AMA', '[R]eddiquette']
+flairs = ['Politics', 'Photography', 'Policy/Economy', 'AskIndia', 'Sports', 'Non-Political',
+          'Scheduled', 'Science/Technology', 'Food', 'Business/Finance', 'Coronavirus', 'AMA', '[R]eddiquette']
 
 # cleaning combined data
 stop_words = stopwords.words('english')  # stopwords
-extended = ['nan', 'https', 'http', 'redd', 'com', 'reddit', 'wwwredditcom', 'get', 'imgurcom', 'iimgurcom', 'www', 'x200b', 'nbsp', 'like', 'dont',
+extended = ['nan', 'https', 'http', 'redd', 'com', 'reddit', 'wwwredditcom', 'get',     'imgurcom', 'iimgurcom', 'www', 'x200b', 'nbsp', 'like', 'dont',
             'people', 'india', 'indian', 'time', 'good', 'want', 'think', 'know', 'need', 'make', 'thing', 'year', 'day', 'reddit', 'comments', 'comment']
 stop_words.extend(extended)
 
@@ -50,14 +50,17 @@ allowed_postags = ['PROPN', 'VERB', 'NOUN', 'ADV', 'ADJ']
 
 
 def lemmatize_text(submission_df):
-    lemmatized_submissions = []
-    for submission in submission_df['combined_cleaned']:
-        doc = nlp(submission)
-        submission = [
-            token.lemma_ for token in doc if token.pos_ in allowed_postags]
-        lemmatized_submissions.append(" ".join(submission))
-    submission_df['combined_lemmatized'] = lemmatized_submissions
-    return submission_df
+    try:
+        lemmatized_submissions = []
+        for submission in submission_df['combined_cleaned']:
+            doc = nlp(submission)
+            submission = [
+                token.lemma_ for token in doc if token.pos_ in allowed_postags]
+            lemmatized_submissions.append(" ".join(submission))
+        submission_df['combined_lemmatized'] = lemmatized_submissions
+        return submission_df
+    except:
+        return submission_df
 
 
 def unicodeToAscii(s):
