@@ -8,16 +8,16 @@ import re
 import string
 import spacy
 import nltk
+import sys
 from nltk.corpus import stopwords
 from sklearn.svm import SVC
 import logging
 
+app = Flask(__name__)
+
 # logging to Heroku to debug runtime errors
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
-
-
-app = Flask(__name__)
 
 
 @app.route('/')
