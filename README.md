@@ -32,7 +32,7 @@ pip3 install -r requirements.txt
 Now, execute the following command: `python main.py`. It will direct to the _localhost_ with the _port_. Copy the IP Address to a web browser and use the flask app.
 
 ## Summary
-To conclude, I sampled r/India flair wise, (to the extent PRAW permitted) and found out that SVM with C=10, gamma=1, and the rbf kernel was able to achieve ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my Jupyter Notebooks.
+To conclude, I sampled [r/India](https://reddit.com/r/India/) flair wise, (200 per flair, within PRAW constraints) and found out that TFIDF word vectors performed best with SVC (C=10, gamma=1, and the rbf kernel) achieving ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my Jupyter Notebooks.
 
 |   Vectorizer  |    Multinomial Naive Bayes     |    Logistic Regression   | Random Forest | **Support Vector Machine** |
 | ------------- | ------------------------------ | ------------------------ | ------------- | -------------------------- |
