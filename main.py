@@ -60,6 +60,7 @@ def lemmatize_text(submission_df):
         submission_df['combined_lemmatized'] = lemmatized_submissions
         return submission_df
     except:
+        submission_df['combined_lemmatized'] = submission_df['combined_cleaned']
         return submission_df
 
 
