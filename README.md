@@ -8,7 +8,7 @@ Ensure that you have  [Python3](https://www.python.org/downloads/)  and  [pip](h
 
 Open the Terminal and Clone the repository.
 ```
-git clone https://github.com/ramanshgrover/
+git clone https://github.com/ramanshgrover/redd-it-flair-detector/
 ```
 Create a virtual environment.
 ``` 
