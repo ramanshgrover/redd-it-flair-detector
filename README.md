@@ -34,7 +34,7 @@ pip3 install -r requirements.txt
 Now, execute the following command: `python main.py`. It will direct to the _localhost_ with the _port_. Copy the IP Address to a web browser and use the flask app.
 
 ## Summary
-To conclude, I sampled [r/India](https://reddit.com/r/India/) flairwise, (200 per flair, within PRAW constraints) and found out that TFIDF word vectors performed best with SVC (C=10, gamma=1, and the rbf kernel) achieving ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my [Jupyter Notebooks](https://github.com/ramanshgrover/redd-it-flair-detector/tree/master/notebooks).
+To conclude, I sampled [r/India](https://reddit.com/r/India/) flairwise, (200 per flair, within PRAW constraints). The aforementioned dataset consisted of Hindi, English and code-mixed (Hinglish) text data. Upon further EDA, I made sure to preprocess every class of flair to be independent of the others and found out that TFIDF word vectors performed best with SVC (C=10, gamma=1, and the rbf kernel) achieving ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my [Jupyter Notebooks](https://github.com/ramanshgrover/redd-it-flair-detector/tree/master/notebooks).
 
 |   Vectorizer  |    Multinomial Naive Bayes     |    Logistic Regression   | Random Forest | **Support Vector Machine** |
 | :-----------: | :----------------------------: | :----------------------: | :-----------: | :------------------------: |
