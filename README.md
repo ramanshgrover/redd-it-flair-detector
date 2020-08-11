@@ -33,8 +33,12 @@ pip3 install -r requirements.txt
 
 Now, execute the following command: `python main.py`. It will direct to the _localhost_ with the _port_. Copy the IP Address to a web browser and use the flask app.
 
-## Summary
-To conclude, I sampled [r/India](https://reddit.com/r/India/) flairwise, (200 per flair, within PRAW constraints). The aforementioned dataset consisted of Hindi, English and code-mixed (Hinglish) text data. Upon further EDA, I made sure to preprocess every class of flair to be independent of the others and found out that TFIDF word vectors performed best with SVC (C=10, gamma=1, and the rbf kernel) achieving ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my [Jupyter Notebooks](https://github.com/ramanshgrover/redd-it-flair-detector/tree/master/notebooks).
+## Summary of the Methodology
+To conclude, I sampled [r/India](https://reddit.com/r/India/) flairwise, (200 per flair, within PRAW constraints). The aforementioned dataset consisted of Hindi, English and code-mixed (Hinglish) text data. In this task, I clustered out the Hindi and the English portions of a data point (URL+Title+Post+Comments). One of the main properties of such texts is that the English and the Hindi parts generally exist in groups. Hence, I tried to isolate them. 
+
+I used the corpus generated from a dictionary, computed every word's [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) with words in our corpus starting from 'r' and having a length in range (l-2, l+2) where l is the length of the word in consideration. But for most code-mixed tokens scraped, depending upon the context, there will be a large levenshtein distance with respect to the corpus. Hence we alot a distance to every word and then finally apply the k-means algorithm to get two clusters of Code-Mixed Hinglish and English. Using the googletrans library, I translated the Code-Mixed Hindi written in Latin script to Devanagari.
+
+Upon further EDA, I made sure to preprocess every class of flair to be independent of the others (in terms of the text distribution itself) and found out that TFIDF word vectors performed best with SVC (C=10, gamma=1, and the rbf kernel) achieving ~80.51% testing accuracy with a surprisingly large overfit. For detailed analysis, intuitions, observations and working do check out my [Jupyter Notebooks](https://github.com/ramanshgrover/redd-it-flair-detector/tree/master/notebooks).
 
 |   Vectorizer  |    Multinomial Naive Bayes     |    Logistic Regression   | Random Forest | **Support Vector Machine** |
 | :-----------: | :----------------------------: | :----------------------: | :-----------: | :------------------------: |
