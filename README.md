@@ -1,4 +1,3 @@
-[![HitCount](http://hits.dwyl.com/ramanshgrover/redd-it-flair-detector.svg)](http://hits.dwyl.com/ramanshgrover/redd-it-flair-detector)
 # Reddit Flair Detector
  A web application to detect flairs of [r/India](https://reddit.com/r/India/) posts. The application is live [here](https://redd-it-flair-detector.herokuapp.com/)
  
